@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+// Mensaje vacío
+message Nada {}
+
+// Mensaje para el chat
+message ChatMessage {
+    string username = 1;
+    string message = 2;
+}
+
+// Servicio de chat
+service ChatServer {
+    // Transmite los mensajes de chat a los clientes
+    rpc ChatStream (Nada) returns (stream ChatMessage);
+    // Recibe los mensajes de los clientes
+    rpc SendMessage (ChatMessage) returns (Nada);
+}
