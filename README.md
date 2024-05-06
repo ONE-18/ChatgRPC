@@ -6,7 +6,7 @@ Este proyecto implementa un sistema de chat utilizando gRPC (Google Remote Proce
 
 1. Clona este repositorio:
 
-   git clone https://github.com/tu-usuario/chat-grpc.git
+   git clone [https://github.com/ONE-18/ChatgRPC.git](https://github.com/ONE-18/ChatgRPC.git)
 
 2. Instala las dependencias necesarias:
 
