@@ -17,13 +17,12 @@ class ChatService(chat_pb2_grpc.ChatServerServicer):
                 n = self.mensajes[lastindex]
                 lastindex += 1
                 if n.message.strip() != "":
-                    print("[{}] {}".format(n.username, n.message))
                     yield chat_pb2.ChatMessage(username=n.username, message=n.message)
     
     # Método para recibir y almacenar los mensajes de los clientes 
     # Es el método que se llama cuando un cliente envía un mensaje
     def SendMessage(self, request, context):
-        print(f"Nombre de usuario recibido: {request.username}")
+        # print(f"Nombre de usuario recibido: {request.username}")
         print(f"[{request.username}] {request.message}")
         self.mensajes.append(request)
         return chat_pb2.Nada()
